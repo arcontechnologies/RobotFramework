@@ -5,8 +5,12 @@ job "robot_Sangoma" {
     task "sangoma" {
       driver = "raw_exec"
       config {
- 				command = "D:\\RobotFramework\\run_sangoma.bat"
-				args    = [""]
+ 				command = "${NOMAD_ALLOC_DIR}/repo/rcc"
+				args    = ["run","-e", "${NOMAD_ALLOC_DIR}/repo/devdata/env.json"]
+      }
+      artifact {
+        source      = "https://github.com/arcontechnologies/RobotFramework.git"
+        destination = "local/repo"
       }
     }
   }
