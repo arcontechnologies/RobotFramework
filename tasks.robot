@@ -1,9 +1,15 @@
 *** Settings ***
-Documentation     Robot that connect to Sangoma website.
+Documentation     Robot that do a lot of things
 Library           tasks.py
-Variables         MyVariables.py
+Library           pdfer.py
+Variables         variables.py
 
 *** Tasks ***
-Sangoma task
+Experiments task
     connect to sangoma
-    Log    ${TODAY}
+    #Log    ${TODAY}
+    #email to send
+    #get outlook emails
+    #read from excel
+    #get pdf widgets
+    #connect with playwright
