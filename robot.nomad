@@ -20,10 +20,13 @@ job "job_robot" {
     task "run_robot" {
       driver = "raw_exec"
       config {
- 				command = "${NOMAD_TASK_DIR}\\repo\\rcc"
-				args    = ["run","-e", "${NOMAD_TASK_DIR}\\repo\\devdata\\env.json"]
+ 				command = "local/rcc"
+				args    = ["run","-e", "local/devdata/env.json"]
       }
-
+      artifact {
+        source      = "https://github.com/arcontechnologies/RobotFramework"
+        destination = "/local"
+      }
     }
   }
 }
