@@ -24,7 +24,8 @@ job "job_robot" {
 				args    = ["run","-e", "local/devdata/env.json"]
       }
       artifact {
-        source      = "https://github.com/arcontechnologies/RobotFramework"
+        source      = "https://github.com/arcontechnologies/RobotFramework/archive/refs/heads/master.zip"
+        mode        = "file"
         destination = "/local"
       }
     }
